@@ -13,7 +13,7 @@ function cli {
 	generate_video "$audio_file" "$image_files" "$num_images"
 }
 
-function tui {
+function stdin {
 	while true; do
 		read -r -p "Specify the file path fo the audio file: " audio_file
 
@@ -98,7 +98,7 @@ function generate_video {
 }
 
 if [[ "${#1}" == 0 && "${#2}" == 0 ]]; then
-	tui
+	stdin
 else
 	cli "$@"
 fi
